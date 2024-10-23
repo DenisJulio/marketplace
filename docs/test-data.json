@@ -1,0 +1,99 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Pedro Santos",
+      "email": "denis@email.com",
+      "imagem": "/images/avatars/pedro-avatar.jpg"
+    },
+    {
+      "id": 2,
+      "nome": "Maria Antonia",
+      "email": "maria@email.com",
+      "imagem": "/images/avatars/maria-avatar.jpg"
+    },
+    {
+      "id": 3,
+      "nome": "João Marcos",
+      "email": "joao@email.com",
+      "imagem": "/images/avatars/joao-avatar.jpg"
+    }
+  ],
+  "anuncios": [
+    {
+      "id": 1,
+      "nome": "Carro",
+      "criadoEm": "2024-05-28T15:00",
+      "anuncianteId": 1,
+      "valor": 15.75,
+      "descrição": "Veiculo usado mas bem conservado",
+      "imagem": "/images/anuncios/anuncio-carro.jpg"
+    },
+    {
+      "id": 2,
+      "nome": "Moto",
+      "criadoEm": "2024-01-29T10:00",
+      "anuncianteId": 1,
+      "valor": 7.0,
+      "descrição": "Aceito troca por outra moto.",
+      "imagem": "/images/anuncios/anuncio-moto.jpg"
+    },
+    {
+      "id": 3,
+      "nome": "Livro",
+      "criadoEm": "2024-10-20T07:00",
+      "anuncianteId": 2,
+      "valor": 50.0,
+      "descrição": "Livro em perfeitas condições,apenas algumas marcas de realçe",
+      "imagem": "/images/anuncios/anuncio-livro.jpg"
+    },
+    {
+      "id": 4,
+      "nome": "Tenis",
+      "criadoEm": "2024-06-15T20:00",
+      "anuncianteId": 3,
+      "valor": 150.0,
+      "descrição": "Tenis com pouco uso",
+      "imagem": "/images/anuncios/anuncio-tenis.webp"
+    },
+    {
+      "id": 5,
+      "nome": "Camisa",
+      "criadoEm": "2024-03-18T10:00",
+      "anuncianteId": 3,
+      "valor": 47.99,
+      "descrição": "Camisa super estilosa",
+      "imagem": "/images/anuncios/anuncio-camisa.avif"
+    }
+  ],
+  "ofertas": [
+    {
+      "id": 1,
+      "criadoEm": "2024-11-01T10:00",
+      "ofertanteId": 3,
+      "anuncianteId": 2,
+      "anuncioId": 3
+    },
+    {
+      "id": 2,
+      "criadoEm": "2024-11-03T10:00",
+      "ofertanteId": 3,
+      "anuncianteId": 1,
+      "anuncioId": 1
+    },
+    {
+      "id": 3,
+      "criadoEm": "2024-11-25T11:00",
+      "ofertanteId": 2,
+      "anuncianteId": 1,
+      "anuncioId": 2
+    },
+    {
+      "id": 4,
+      "criadoEm": "2024-12-04T12:00",
+      "ofertanteId": 1,
+      "anuncianteId": 3,
+      "anuncioId": 4
+    }
+  ]
+}

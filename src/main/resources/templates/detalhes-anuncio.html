@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" layout:decorate="~{layout}">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <main id="content" layout:fragment="content" hx-history-elt>
+      <div class="container mx-auto mt-6 p-4">
+        <div class="grid grid-cols-2 gap-10">
+          <div class="col-span-1">
+            <img
+              th:src="${anuncio.imagem}"
+              alt="Product"
+              class="h-96 w-full object-cover rounded-lg"
+            />
+            <p
+              th:text="${anuncio.descricao}"
+              class="text-gray-600 text-lg mt-4"
+            ></p>
+          </div>
+          <div class="col-span-1 sticky top-0">
+            <h2 th:text="${anuncio.nome}" class="text-4xl font-bold mb-2">
+              Nome
+            </h2>
+            <p
+              th:text="|Criado em  ${#temporals.format(anuncio.criadoEm, 'dd MMM yyyy', 'pt-br')}|"
+              class="text-gray-600 text-sm mb-2"
+            ></p>
+            <div x-data>
+              <p class="text-gray-600 text-sm mb-2">
+                Anunciante:
+                <span
+                  @click="$float({placement: 'bottom-start', offset: 10})"
+                  class="hover:text-blue-800 hover:underline cursor-pointer"
+                  th:text="${anuncio.anunciante.nome}"
+                ></span>
+              </p>
+              <div x-ref="panel" class="panel hidden absolute max-w-sm mx-auto">
+                <div
+                  class="flex items-center bg-white shadow-xl rounded-lg p-4 border-[1px] border-gray-200"
+                >
+                  <img
+                    th:src="@{|/${anuncio.anunciante.imagem}}"
+                    class="w-16 h-16 rounded-full border-[1px] border-gray-500"
+                    alt=""
+                  />
+                  <div class="ml-4">
+                    <h2
+                      class="text-gray-500 font-semibold text-lg"
+                      th:text="${anuncio.anunciante.nome}"
+                    >
+                      nome
+                    </h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p
+              th:text="|R$ ${#numbers.formatDecimal(anuncio.valor, 1, 2, 'COMMA')}|"
+              class="text-2xl font-bold mb-2"
+            ></p>
+            <button
+              class="mt-4 w-3/12 rounded-lg p-4 uppercase bg-blue-500 hover:bg-blue-700 text-white font-bold text-xs"
+            >
+              Fazer Oferta
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
