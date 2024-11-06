@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.thymeleaf.extras.java8time.dialect.Java8TimeDialect;
 
+import com.denisjulio.marketplace.utils.DateUtils;
+
 import nz.net.ultraq.thymeleaf.layoutdialect.LayoutDialect;
 
 @SpringBootApplication
@@ -22,5 +24,10 @@ public class MarketplaceApplication {
 	@Bean
 	LayoutDialect layoutDialect() {
 		return new LayoutDialect();
+	}
+
+	@Bean
+	DateUtils dateUtils() {
+		return new DateUtils();
 	}
 }

@@ -2,12 +2,13 @@
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="en-US">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Layout</title>
     <link rel="stylesheet" th:href="@{/style.css}" />
   </head>
   <body>
     <header class="sticky top-0">
-      <nav class="bg-gray-800 p-4 flex justify-between items-center">
+      <nav class="bg-gray-800 h-12 p-4 flex justify-between items-center">
         <div
           class="flex items-center cursor-pointer"
           th:hx-get="@{/}"
@@ -21,7 +22,7 @@
             alt="Logo"
             class="h-6 w-6 mr-4"
           />
-          <span class="text-lg font-bold text-white">Marketplace</span>
+          <span class="text-md font-bold text-white">Marketplace</span>
         </div>
       </nav>
     </header>

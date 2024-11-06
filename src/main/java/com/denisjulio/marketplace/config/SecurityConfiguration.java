@@ -16,8 +16,8 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfiguration {
 
-    private static String[] PERMITTED_PATHS = { "/", "/anuncios/**" };
-    private static String[] STATIC_RESOURCES = { "/icons/**", "/images/**", "/webjars/**", "/style.css" };
+    private static final String[] PERMITTED_PATHS = { "/", "/anuncios/**" };
+    private static final String[] STATIC_RESOURCES = { "/icons/**", "/images/**", "/webjars/**", "/style.css" };
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {

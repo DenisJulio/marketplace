@@ -7,35 +7,35 @@
   </head>
   <body>
     <main id="content" layout:fragment="content" hx-history-elt>
-      <div class="mt-6">
+      <div class="mt-6 flex flex-col">
         <div th:each="anuncio : ${anuncios}">
           <div
-            class="max-w-md mx-auto cursor-pointer bg-white rounded-lg shadow-md p-4 mb-4"
+            class="p-4 mx-4 mb-4 max-w-md cursor-pointer bg-white rounded-lg shadow-md"
             th:hx-get="@{|/anuncios/${anuncio.id}|}"
             hx-select="#content"
             hx-target="#content"
-            hx-swap="outerHTML"
+            hx-swap="outerHTML show:window:top"
             hx-push-url="true"
           >
-            <div class="flex justify-center mb-4">
+            <div class="flex justify-center">
               <img
                 th:src="@{|/${anuncio.imagem}|}"
                 alt="Product"
-                class="h-48 w-48 object-cover rounded-lg"
+                class="h-48 w-auto object-cover rounded-lg"
               />
             </div>
-            <div class="px-4">
+            <div class="px-4 mt-2">
               <h2 class="text-lg font-bold mb-2" th:text="${anuncio.nome}">
                 Nome de anuncio
               </h2>
               <p
                 class="text-gray-600 text-sm mb-2"
-                th:text="|Criado em  ${#temporals.format(anuncio.criadoEm, 'dd MMM yyyy', 'pt-br')}|"
+                th:text="|anunciado há ${@dateUtils.formataStrEmTempoRelativo(anuncio.criadoEm)}|"
               >
                 Criado em: {{ criadoEm }}
               </p>
               <p
-                class="text-lg font-bold mb-2"
+                class="text-xl font-bold mb-2"
                 th:text="|R$ ${#numbers.formatDecimal(anuncio.valor, 1, 2, 'COMMA')}|"
               >
                 R$ {{ valor }}
